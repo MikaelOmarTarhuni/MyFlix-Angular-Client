@@ -17,20 +17,19 @@ constructor(
     public dialogRef: MatDialogRef<UserRegistrationFormComponent>,
     public snackBar: MatSnackBar) { }
 
-ngOnInit(): void {
-}
+ngOnInit(): void {}
 
 registerUser(): void {
     this.fetchApiData.userRegistration(this.userData).subscribe((result) => {
      this.dialogRef.close();
      console.log(result);
-     this.snackBar.open(result, 'OK', {
-        duration: 2000
+     this.snackBar.open('user registered successfully!', 'OK', {
+        duration: 4000
      });
     }, (result) => {
       console.log(result);
       this.snackBar.open(result, 'OK', {
-        duration: 2000
+        duration: 4000
       });
     });
   }
